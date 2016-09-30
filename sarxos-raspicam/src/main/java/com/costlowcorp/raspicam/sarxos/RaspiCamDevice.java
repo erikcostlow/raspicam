@@ -33,8 +33,6 @@ public class RaspiCamDevice implements WebcamDevice {
 
     private Dimension size = DIMENSIONS[0];
 
-    private boolean open;
-
     @Override
     public String getName() {
         return "RaspiCam";
@@ -63,12 +61,12 @@ public class RaspiCamDevice implements WebcamDevice {
 
     @Override
     public void open() {
-        open = true;
+        Camera.INSTANCE.open();
     }
 
     @Override
     public void close() {
-        open = false;
+        Camera.INSTANCE.close();
     }
 
     @Override
@@ -78,7 +76,7 @@ public class RaspiCamDevice implements WebcamDevice {
 
     @Override
     public boolean isOpen() {
-        return open;
+        return Camera.INSTANCE.isOpen();
     }
 
 }
