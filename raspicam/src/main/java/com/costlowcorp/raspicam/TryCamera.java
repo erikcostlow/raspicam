@@ -1,3 +1,6 @@
+/*
+ * Erik Costlow www.costlowcorp.com
+*/
 package com.costlowcorp.raspicam;
 
 

@@ -1,14 +1,11 @@
 /*
- * Copyright Erik Costlow.
- * Not authorized for use or view by others.
- */
+ * Erik Costlow www.costlowcorp.com
+*/
 package com.costlowcorp.imageio.ppm;
 
 import java.awt.image.BufferedImage;
 import java.io.IOException;
 import java.io.InputStream;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 import static org.testng.Assert.assertEquals;
 import static org.testng.Assert.assertNotNull;

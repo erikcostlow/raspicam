@@ -1,7 +1,6 @@
 /*
- * Copyright Erik Costlow.
- * Not authorized for use or view by others.
- */
+ * Erik Costlow www.costlowcorp.com
+*/
 package com.costlowcorp.raspicam.sarxos;
 
 import com.costlowcorp.raspicam.Camera;
