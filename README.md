@@ -12,7 +12,7 @@ try(OutputStream out = Files.newOutputStream(jpeg)){
   ImageIO.write(image, "JPG", out);
 }
 ```
-##Usage with Sarxos Webcam
+##Usage with [Sarxos Webcam-Capture](https://github.com/sarxos/webcam-capture)
 This code works with the native library, so the sarxos-raspicam driver includes
 a test program that is not a unit test.
 ```java
