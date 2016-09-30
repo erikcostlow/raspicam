@@ -1,6 +1,6 @@
 # raspicam
 Java library for accessing a Raspberry Pi onboard camera.
-Tested on a Pi 2 model B+ using a Pi Noir 2
+Tested on a Pi 2 model B+ using a [Pi Noir 2](https://www.raspberrypi.org/products/pi-noir-camera-v2/).
 
 ##Usage:
 Basic
