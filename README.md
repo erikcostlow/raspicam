@@ -25,3 +25,4 @@ BufferedImage image = webcam.getImage();
 The project only compiles Java, you need to compile the C++ separately, on a Pi.
 There is a file called go.sh which does this, then you need to copy the .so
 file into the JAR's META-INF folder.
+The native code links into (and includes) [RaspiCam C++](http://www.uco.es/investiga/grupos/ava/node/40)
