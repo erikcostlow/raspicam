@@ -1,18 +1,18 @@
 package uk.co.mmscomputing.imageio.ppm;
 
+import java.awt.image.BufferedImage;
+import java.awt.image.PixelGrabber;
+import java.awt.image.WritableRaster;
 import java.io.IOException;
-import java.nio.ByteOrder;
-import java.util.Iterator;
-import java.util.ArrayList;
-
-import java.awt.image.*;
-
-import javax.imageio.*;
-import javax.imageio.spi.*;
-import javax.imageio.stream.*;
-import javax.imageio.metadata.*;
-
-import uk.co.mmscomputing.image.operators.*;
+import javax.imageio.IIOImage;
+import javax.imageio.ImageTypeSpecifier;
+import javax.imageio.ImageWriteParam;
+import javax.imageio.ImageWriter;
+import javax.imageio.metadata.IIOMetadata;
+import javax.imageio.spi.ImageWriterSpi;
+import javax.imageio.stream.ImageOutputStream;
+import uk.co.mmscomputing.image.operators.Binarization;
+import uk.co.mmscomputing.image.operators.GrayScale;
 
 public class PBMImageWriter extends ImageWriter implements PPMConstants{
 

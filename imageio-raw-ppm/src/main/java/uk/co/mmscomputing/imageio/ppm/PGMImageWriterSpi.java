@@ -2,11 +2,10 @@ package uk.co.mmscomputing.imageio.ppm;
 
 import java.io.IOException;
 import java.util.Locale;
-import java.awt.image.BufferedImage;
-import javax.imageio.*;
-import javax.imageio.spi.*;
-import javax.imageio.stream.*;
-import javax.imageio.metadata.*;
+import javax.imageio.ImageTypeSpecifier;
+import javax.imageio.ImageWriter;
+import javax.imageio.spi.ImageWriterSpi;
+import static javax.imageio.spi.ImageWriterSpi.STANDARD_OUTPUT_TYPE;
 
 public class PGMImageWriterSpi extends ImageWriterSpi {
 

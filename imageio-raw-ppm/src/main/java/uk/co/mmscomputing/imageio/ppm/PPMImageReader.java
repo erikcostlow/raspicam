@@ -1,13 +1,16 @@
 package uk.co.mmscomputing.imageio.ppm;
 
-import java.io.*;
-import java.util.*;
-
-import java.awt.image.*;
-import javax.imageio.*;
-import javax.imageio.spi.*;
-import javax.imageio.stream.*;
-import javax.imageio.metadata.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.WritableRaster;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Iterator;
+import javax.imageio.ImageReadParam;
+import javax.imageio.ImageReader;
+import javax.imageio.ImageTypeSpecifier;
+import javax.imageio.metadata.IIOMetadata;
+import javax.imageio.spi.ImageReaderSpi;
+import javax.imageio.stream.ImageInputStream;
 
 public class PPMImageReader extends ImageReader {
 

@@ -1,12 +1,11 @@
 package uk.co.mmscomputing.imageio.ppm;
 
 import java.io.IOException;
-import java.nio.ByteOrder;
 import java.util.Locale;
-import javax.imageio.*;
-import javax.imageio.spi.*;
-import javax.imageio.stream.*;
-import javax.imageio.metadata.*;
+import javax.imageio.ImageReader;
+import javax.imageio.spi.ImageReaderSpi;
+import static javax.imageio.spi.ImageReaderSpi.STANDARD_INPUT_TYPE;
+import javax.imageio.stream.ImageInputStream;
 
 public class PPMImageReaderSpi extends ImageReaderSpi {
 
