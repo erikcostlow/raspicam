@@ -231,6 +231,14 @@ JNIEXPORT void JNICALL Java_com_costlowcorp_raspicam_Camera_setVerticalFlipNativ
 JNIEXPORT jstring JNICALL Java_com_costlowcorp_raspicam_Camera_getIdNative
   (JNIEnv *, jobject);
 
+/*
+ * Class:     com_costlowcorp_raspicam_Camera
+ * Method:    setExposureNative
+ * Signature: (I)V
+ */
+JNIEXPORT void JNICALL Java_com_costlowcorp_raspicam_Camera_setExposureNative
+  (JNIEnv *, jobject, jint);
+
 #ifdef __cplusplus
 }
 #endif

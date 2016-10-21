@@ -78,6 +78,10 @@ public enum Camera implements AutoCloseable {
     public String getId() {
         return getIdNative();
     }
+    
+    public void setExposure(ExposureType type){
+        setExposureNative(type.getCppValue());
+    }
 
     /**
      *
@@ -356,4 +360,6 @@ public enum Camera implements AutoCloseable {
     private native void setVerticalFlipNative(boolean vFlip);
 
     private native String getIdNative();
+
+    private native void setExposureNative(int cppValue);
 }
