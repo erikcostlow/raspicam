@@ -1,6 +1,9 @@
 package uk.co.mmscomputing.image.operators;
 
-import java.awt.image.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.awt.image.IndexColorModel;
+import java.awt.image.Raster;
 
 // Thomas W. Lipp, Grafikformate, MS Press, ISBN 3-86063-391-0 :  p 117
 // Douglas A. Lyon, Image Processing in Java, Prentice Hall PTR, ISBN: 0-13-974577-7 p 361

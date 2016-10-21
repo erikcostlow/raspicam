@@ -1,11 +1,13 @@
 package uk.co.mmscomputing.image.operators;
 
-import java.awt.image.*;
+import java.awt.image.BufferedImage;
+import java.awt.image.DataBufferByte;
+import java.awt.image.IndexColorModel;
+import java.awt.image.Raster;
 
 // Anthony Dekker; Kohonen neural networks for optimal colour quantization in Volume 5, 
 // pp 351-367 of the journal Network: Computation in Neural Systems, Institute of Physics Publishing, 1994
 // http://members.ozemail.com.au/~dekker/NEUQUANT.HTML [2006-02-10]
-
 public class DekkerQuantiziser extends Operator{
     
   public static final int ncycles     =  100;                   // no. of learning cycles

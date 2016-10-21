@@ -1,6 +1,6 @@
 package uk.co.mmscomputing.image.operators;
 
-import java.awt.image.*;
+import java.awt.image.BufferedImage;
 
 public class Binarization extends Operator{
 

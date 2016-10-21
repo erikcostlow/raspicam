@@ -1,8 +1,10 @@
 package uk.co.mmscomputing.image.operators;
 
-import java.awt.image.*;
-import java.awt.color.*;
-import java.util.*;
+import java.awt.color.ColorSpace;
+import java.awt.image.BufferedImage;
+import java.awt.image.ColorConvertOp;
+import java.awt.image.DataBuffer;
+import java.awt.image.WritableRaster;
 
 public class GrayScale extends Operator{
 

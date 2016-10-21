@@ -1,7 +1,7 @@
 package uk.co.mmscomputing.image.operators;
 
+import java.awt.image.BufferedImage;
 import java.util.Properties;
-import java.awt.image.*;
 
 public class ImageTypeConvertOp extends Operator{
 
