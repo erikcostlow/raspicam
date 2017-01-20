@@ -12,15 +12,15 @@ import java.util.List;
  *
  * @author Erik Costlow
  */
-public class RaspiCamDriver implements WebcamDriver{
+public class WrappedRaspiStillDriver implements WebcamDriver{
 
-    public RaspiCamDriver() {
+    public WrappedRaspiStillDriver() {
         
     }
 
     @Override
     public List<WebcamDevice> getDevices() {
-        return Arrays.asList(new RaspiCamDevice(), new WrappedCameraDevice());
+        return Arrays.asList(new WrappedCameraDevice());
     }
 
     @Override

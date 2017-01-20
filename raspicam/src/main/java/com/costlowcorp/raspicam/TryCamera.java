@@ -24,7 +24,8 @@ import javax.imageio.ImageIO;
 public class TryCamera {
     public static void main(String[] args) throws IOException, InterruptedException{
         System.out.println("Trying...");
-        
+        Camera.INSTANCE.setExposure(ExposureType.RASPICAM_EXPOSURE_NIGHT);
+        Camera.INSTANCE.setShutterSpeed(0);
         System.out.println("Size is " + Camera.INSTANCE.getWidth() + "x" + Camera.INSTANCE.getHeight());
         System.out.println("The bytes per grab is " + Camera.INSTANCE.getBytesPerGrab());
         System.out.println("Camera ID is " + Camera.INSTANCE.getId());
@@ -40,7 +41,7 @@ public class TryCamera {
         System.out.println("Done, now converting to JPG");
         
         try (InputStream in = Files.newInputStream(Paths.get("check1.ppm"));
-                OutputStream out = Files.newOutputStream(Paths.get("text.jpg"));
+                OutputStream out = Files.newOutputStream(Paths.get("test.jpg"));
                 ) {
             final BufferedImage img = ImageIO.read(in);
             System.out.println("Image is " + img);

@@ -3,16 +3,20 @@
 */
 package com.costlowcorp.raspicam.sarxos;
 
-import com.costlowcorp.raspicam.Camera;
+import com.costlowcorp.raspicam.ExposureType;
+import com.costlowcorp.raspicam.WrappedProcessCamera;
 import com.github.sarxos.webcam.WebcamDevice;
 import java.awt.Dimension;
 import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.IOException;
+import javax.imageio.ImageIO;
 
 /**
  *
  * @author Erik Costlow
  */
-public class RaspiCamDevice implements WebcamDevice {
+public class WrappedCameraDevice implements WebcamDevice {
 
     private final static Dimension[] DIMENSIONS = new Dimension[]{
         //new Dimension(176, 144),
@@ -31,11 +35,17 @@ public class RaspiCamDevice implements WebcamDevice {
         new Dimension(3264, 2448)//8MP
     };
 
-    private Dimension size = DIMENSIONS[0];
+    private Dimension size = DIMENSIONS[2];
+    
+    private boolean open;
+    
+    private boolean vFlip;
+    
+    private boolean hFlip;
 
     @Override
     public String getName() {
-        return "RaspiCam";
+        return "RaspiStill-executing wrapper";
     }
 
     @Override
@@ -51,24 +61,26 @@ public class RaspiCamDevice implements WebcamDevice {
     @Override
     public void setResolution(Dimension dmnsn) {
         size = dmnsn;
-        Camera.INSTANCE.setWidth(Double.valueOf(dmnsn.getWidth()).intValue());
-        Camera.INSTANCE.setHeight(Double.valueOf(dmnsn.getHeight()).intValue());
     }
 
     @Override
     public BufferedImage getImage() {
-        final BufferedImage img = Camera.INSTANCE.grabImage();
-        return img;
+        try {
+            final byte[] bytes = WrappedProcessCamera.INSTANCE.grabFrame(ExposureType.RASPICAM_EXPOSURE_OFF, size, vFlip, hFlip);
+            return ImageIO.read(new ByteArrayInputStream(bytes));
+        } catch (IOException ex) {
+            return null;
+        }
     }
 
     @Override
     public void open() {
-        Camera.INSTANCE.open();
+        open=true;
     }
 
     @Override
     public void close() {
-        Camera.INSTANCE.close();
+        open=false;
     }
 
     @Override
@@ -78,7 +90,15 @@ public class RaspiCamDevice implements WebcamDevice {
 
     @Override
     public boolean isOpen() {
-        return Camera.INSTANCE.isOpen();
+        return open;
+    }
+    
+    public void setVFlip(boolean vFlip){
+        this.vFlip=vFlip;
+    }
+
+    public void sethFlip(boolean hFlip) {
+        this.hFlip = hFlip;
     }
 
 }
