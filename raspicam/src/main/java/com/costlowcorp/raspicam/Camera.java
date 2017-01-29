@@ -48,7 +48,7 @@ public enum Camera implements AutoCloseable {
         if (initialized != 0) {
             throw new RuntimeException("Unable to initialize camera");
         }
-        
+        ImageIO.setUseCache(false);
     }
 
     private static void extractAndLoad(String item, String prefix, String suffix) {
@@ -133,6 +133,7 @@ public enum Camera implements AutoCloseable {
      * @return The current frame grab if available, or null.
      */
     public BufferedImage grabImage() {
+        LOG.info("Getting picture");
         final byte[] bytes = grabBytes();
         if(bytes==null){
             return null;
